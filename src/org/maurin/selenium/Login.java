@@ -22,15 +22,17 @@ public class Login {
 
 		driver.findElement(By.name("ctl00$MainContent$btnLogin")).click();
 
+		// Confirmation
+		String conf_msg = driver.findElement(By.id("conf_message")).getText();
+		System.out.println("CONFIRMATION: " + conf_msg);
 
+		String pageTitle = driver.getTitle();
+		System.out.println(pageTitle);
+		if (pageTitle.equals("SDET Training | Account Management")) {
+			System.out.println("Title test PASSED");
+		}
 
-
-
-
-
-
-
-		//driver.close();
+		driver.close();
 	}
 
 }
